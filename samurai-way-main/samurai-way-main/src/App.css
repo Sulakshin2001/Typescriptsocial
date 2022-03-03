@@ -1,19 +1,12 @@
 .App {
     display: grid;
     grid-template-areas:
-"h h"
+"h h "
 "n c ";
+    grid-template-rows: 60px 1fr ;
+    grid-template-columns: 2fr 10fr;
 }
 
-.header {
-    grid-area: h;
-}
-
-
-.nav {
-    grid-area: n;
-}
-
-.content {
+.content{
     grid-area: c
 }
