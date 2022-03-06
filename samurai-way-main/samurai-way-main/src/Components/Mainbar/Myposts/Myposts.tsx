@@ -1,16 +1,27 @@
 import React from "react";
 import Post from "./Post/Post";
 
+type MypostsProps = {
+    MypoststArray: Array<Type>;
+}
+type Type = {
+    message: string;
+    Likecounts: string;
+}
 
-const Myposts = () => {
+
+const Myposts = (props: MypostsProps) => {
+    let mypostelement = props.MypoststArray.map((ob) => {
+        return (
+            <Post messege={ob.message} Likecounts={ob.Likecounts}/>
+        )
+    })
     return (
         <div>
 
             <textarea></textarea>
             <button> Add post</button>
-            <Post message={'how are you'} Likecounts={'12 likes'}/>
-            <Post message={'its me'} Likecounts={'13 likes'}/>
-            <Post message={'nikita'} Likecounts={'14 likes'}/>
+            {mypostelement}
 
 
         </div>
